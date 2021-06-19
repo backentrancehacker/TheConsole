@@ -1,5 +1,5 @@
-# TheConsole
-A completely useless garbage console that you can drag around
+# Web Console
+Redirect all console methods to display on a draggable console window (useful for mobile development)
 
 ## Features
 * Simple design
