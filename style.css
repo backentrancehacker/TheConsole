@@ -5,14 +5,17 @@ html, body {
 	margin: 0;
 	box-sizing: border-box;
 }
+
 *, *::before, *::after {
 	box-sizing: inherit;
 }
+
 body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
+
 #console {
 	border-radius: 5px;
 	background: #212121;
@@ -23,6 +26,7 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+
 #console #top {
 	flex: 0 0 2em;
 	padding: 0 0.5em;
@@ -34,6 +38,7 @@ body {
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
 }
+
 #console #top #close {
 	background: red;
 	border-radius: 50%;
@@ -56,9 +61,11 @@ body {
 	font-family: 'Courier New', Courier, monospace;
 	color: #fff;
 }
-#content pre span{
+
+#content pre span {
 	display: block;
 }
+
 #content {
 	overflow: scroll;
 	padding: 0 1em;
