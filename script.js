@@ -110,31 +110,3 @@ define("w-console", {
 })
 
 drags(document.querySelector("w-console"))
-
-/*
-const formatConsole = (elem) => {
-	elem.innerHTML = 'web-console'
-	
-	let console = {}
-	for(let key in colors) {
-		console[key] = (words) => {
-			if(typeof words === 'object') 
-				words = JSON.stringify(words, null, 2)
-			elem.innerHTML += `<span style="color: ${colors[key]}">${words}</span>`
-		}
-	}
-	console.clear = () => elem.innerHTML = 'TheConsole AdCharity 2020'
-	return console
-}
-
-CLOSE.addEventListener('click', () => {
-	CONSOLE.remove()
-})
-
-window.console = formatConsole(CONTENT)
-window.onerror = msg => console.warn(msg)
-
-console.success('Loaded Console!')
-
-drags(CONSOLE)
-*/
