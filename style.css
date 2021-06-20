@@ -41,6 +41,12 @@ body {
 	width: 1em;
 	cursor: pointer;
 }
+
+#console #content {
+	overflow-x: hidden;
+	height: 100%;
+}
+
 #console #content pre {
 	user-select: none;
 	font-size: 1.1em;
