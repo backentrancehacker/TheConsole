@@ -4,7 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>web-console</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+	
+	<style>
+		html, body {
+			height: 100%;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		*, *::before, *::after {
+			box-sizing: inherit;
+		}
+
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+
 	<script src="https://unpkg.com/drags.js@1.0.3/drags.js" defer></script>
     <script src="script.js" type="module"></script>
 </head>
