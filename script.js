@@ -4,7 +4,7 @@ const TOP = document.getElementById('top')
 const CONTENT = document.getElementById('content').querySelector('pre')
 
 const formatConsole = (elem) => {
-	elem.innerHTML = 'TheConsole AdCharity 2020'
+	elem.innerHTML = 'web-console nathan-pham 2020'
 	const colors = {
 		warn: '#FF0000',
 		error: '#FF0000',
