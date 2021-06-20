@@ -26,3 +26,4 @@ All errors are automatically caught and passed to `console.warn`
 All console methods are overridden; using `console.log` will cause the message to appear to the on-screen console window. 
 
 ## Screenshots
+![main component](screenshots/main-component.png)
