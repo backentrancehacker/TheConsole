@@ -1,6 +1,5 @@
-import define, { jsh } from "https://unpkg.com/stateful-components@2.0.8/dist/index.js"
-let applied = 0
-const {div, pre, span}  = jsh
+import define, { jsh as h } from "https://unpkg.com/stateful-components@2.1.0/dist/index.js"
+
 const colors = {
 	warn: '#FF0000',
 	error: '#FF0000',
@@ -8,6 +7,8 @@ const colors = {
 	info: '#1E90FF',
 	log: '#FFFFFF'
 }
+
+const cache_console = window.console
 
 const apply = (state) => {
 	const _console = {}
@@ -31,7 +32,7 @@ const apply = (state) => {
 window.onerror = message => console.warn(message)
 
 define("w-console", {
-	initialState: {
+	state: {
 		messages: [{message: "web-console", type: "#FFF"}]
 	},
 
@@ -90,23 +91,26 @@ define("w-console", {
 			padding: 0 1em;
 		}`,
 
-	render(state) {
-		if(applied == 0) {
-			applied ++
-			apply(state)
-		}
-		
-		return div({id: "console"}, 
-			div({id: "top"}, div({id: "close"})),
-			div({id: "content"}, 
-				pre({},
+	mount(state, target) {
+		drags(target)
+		apply(state)
+	},
+
+	unmount(state, target) {
+		window.console = cache_console
+		console.log("removed element")
+	},
+
+	render(state, target) {
+		return h.div({id: "console"}, 
+			h.div({id: "top"}, h.div({id: "close", onClick: () => target.remove() })),
+			h.div({id: "content"}, 
+				h.pre({},
 					state.messages.map(({message, type}) => 
-						span({style: `color: ${type}`}, message.toString())
+						h.span({style: `color: ${type}`}, message.toString())
 					)
 				)
 			)
 		)
 	}
 })
-
-drags(document.querySelector("w-console"))
